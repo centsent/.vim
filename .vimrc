@@ -169,9 +169,6 @@ nmap <leader>w :w!<cr>
 "map <space> /
 "map <c-space> ?
 
-" Useful mappings for managing tabs
-map <leader>t<leader> :tabnext <cr>
-
 """"""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
@@ -250,6 +247,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_html_tidy_exec = 'tidy5'
 let g:syntastic_python_checkers=['pylint']
 let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
+let g:syntastic_javascript_checkers = ['eslint']
 
 """""""""""""""""""""""""""
 " => Airline settings
@@ -361,6 +359,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'mxw/vim-jsx'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
