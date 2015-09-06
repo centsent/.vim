@@ -166,8 +166,8 @@ let g:mapleader = ","
 nmap <leader>w :w!<cr>
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
+"map <space> /
+"map <c-space> ?
 
 " Useful mappings for managing tabs
 map <leader>t<leader> :tabnext <cr>
@@ -205,9 +205,9 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
 nmap tl :Tlist<cr>
 
-"""""""""""""""""""""""
+"""""""""""""""""""""""""""
 " => Autoreload .vimrc
-"""""""""""""""""""""""
+"""""""""""""""""""""""""""
 autocmd! bufwritepost .vimrc source ~/.vimrc 
 map <silent> <leader>ss :source ~/.vimrc<cr>
 map <silent> <leader>ee :e ~/.vimrc<cr>  
