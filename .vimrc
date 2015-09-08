@@ -74,7 +74,7 @@ set cindent
 
 " Linebreak on 500 characters
 set lbr
-set tw=500
+set tw=1000
 
 set fo+=mB
 set sm
@@ -115,7 +115,7 @@ set laststatus=2
 set cmdheight=2
 
 " A buffer becomes hidden when it is abandoned
-set hid
+"set hid
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -209,11 +209,6 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 map <silent> <leader>ss :source ~/.vimrc<cr>
 map <silent> <leader>ee :e ~/.vimrc<cr>  
 
-" ...
-let g:html_indent_inctags = "html,body,head,tbody"
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
-
 """""""""""""""""""""""
 " => ctrlp settings
 """""""""""""""""""""""
@@ -233,6 +228,7 @@ let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowBookmarks=1
 "nnoremap f :NERDTreeToggle
+let g:nerdtree_tabs_open_on_console_startup=1
 
 """""""""""""""""""
 " => Syntastic
@@ -253,8 +249,6 @@ let g:syntastic_javascript_checkers = ['eslint']
 " => Airline settings
 """""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
 
 """""""""""""""""""""""""""
 " => EasyMotion settings
@@ -270,9 +264,17 @@ nmap s <Plug>(easymotion-s)
 nmap s <Plug>(easymotion-s2)
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
-" JK motions: Line motions
+map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
@@ -327,25 +329,20 @@ Plugin 'mattn/emmet-vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'tpope/vim-rails'
-Plugin 'Auto-Pairs'
 Plugin 'python-imports.vim'
 Plugin 'last_edit_marker.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'ctrlp-modified.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'synmark.vim'
-Plugin 'JavaScript-Indent'
 Plugin 'jslint.vim'
-Plugin 'CaptureClipboard'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'wavded/vim-stylus'
 Plugin 'juvenn/mustache.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -354,9 +351,6 @@ Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-multiple-cursors'
 Plugin 'vim-scripts/nginx.vim'
-Plugin 'groenewege/vim-less'
-Plugin 'tpope/vim-markdown'
-Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'mxw/vim-jsx'
