@@ -188,18 +188,8 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keyboard shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map! <C-Z> <Esc>zzi
-map! <C-O> <C-Y>,
-map <C-A> ggVG$"+y
-map <F12> gg=G
 map <C-w> <C-w>w
-imap <C-k> <C-y>,
 imap <C-j> <ESC>
-"map <C-v> "*pa
-imap <C-v> <Esc>"*pa
-imap <C-a> <Esc>^
-imap <C-e> <Esc>$
-vmap <C-c> "+y
 
 """""""""""""""""""""""
 " => Taglist settings
