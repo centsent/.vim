@@ -5,36 +5,41 @@ set t_Co=256
 set background=dark
 " Colorscheme
 colorscheme desert
+"let g:solarized_contrast="normal"
+"let g:solarized_visibility="normal"
 "let g:solarized_termcolors=256
 "let g:solarized_termtrans = 1
 "colorscheme solarized
 
 " Set font according to system
 if has("mac") || has("macunix")
-  set gfn=Source\ Code\ Pro:h12,Menlo:h12
+  set guifont=Source\ Code\ Pro:h12,Menlo:h12
 endif
 
 " Use Unix as the standard file type
-set ffs=unix,dos,mac
+set fileformats=unix,dos,mac
 
 "Always show current position
 set ruler
 " Show line number
-set nu
+set number
 " Highlight current line
-set cul 
+set cursorline
 
 " Highlight current column
-"set cu
+"set cursorcolumn
+
+set completeopt=longest,menu
 
 " Highlight search results
 set hlsearch
+noremap <silent><leader>/ :nohls<CR>
 
 " Makes search act like search in modern browsers
 set incsearch
 
 " Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
+set scrolloff=7
 
 " Show commands
 set showcmd
@@ -46,8 +51,8 @@ set magic
 set lazyredraw
 
 " 1 tab == 2 spaces
-set sw=2
-set ts=2
+set shiftwidth=2
+set tabstop=2
 set softtabstop=2
 
 " No gui options
@@ -59,27 +64,27 @@ set showmatch
 set mat=2
 
 " Use spaces instead of tabs
-set et
+set expandtab
 
 " Be smart when using tabs ;)
 set smarttab
 
 " Smart indent
-set si
+set smartindent
 
 " Auto indent
-set ai
+set autoindent
 
 " Wrap lines
 set wrap
-
+" for c lang
 set cindent
 
-" Linebreak on 500 characters
-set lbr
-set tw=1000
+" Linebreak on 1000 characters
+set linebreak
+"set textwidth=1000
 
-set fo+=mB
+set formatoptions+=mB
 set sm
 set selection=inclusive
 
@@ -89,7 +94,7 @@ set wildmenu
 set mousemodel=popup
 
 " No annoying sound on errors
-set noeb
+set noerrorbells
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -103,7 +108,7 @@ set confirm
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
-set noswapfile
+"set noswapfile
 
 " Ignore case when searching
 set ignorecase
@@ -167,10 +172,12 @@ let g:mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
+" Quickly close the current window
+nnoremap <leader>q :q<CR>
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-"map <space> /
-"map <c-space> ?
+map <space> /
+map <c-space> ?
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -293,6 +300,18 @@ if has("mac") || has("macunix")
   vmap <D-k> <M-k>
 endif
 
+" hjkl
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+
+"Treat long lines as break lines (useful when moving around in them)
+nnoremap k gk
+nnoremap gk k
+nnoremap j gj
+nnoremap gj j
+
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
   exe "normal mz"
@@ -331,12 +350,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'tpope/vim-rails'
-Plugin 'python-imports.vim'
-Plugin 'last_edit_marker.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'ctrlp-modified.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'synmark.vim'
 Plugin 'jslint.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'digitaltoad/vim-jade'
@@ -348,10 +364,14 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-multiple-cursors'
-Plugin 'vim-scripts/nginx.vim'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'mxw/vim-jsx'
+Plugin 'majutsushi/tagbar'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'python-syntax'
+Plugin 'nono/jquery.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
