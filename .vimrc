@@ -33,6 +33,9 @@ set hlsearch
 " Makes search act like search in modern browsers
 set incsearch
 
+" Set 7 lines to the cursor - when moving vertically using j/k
+set so=7
+
 " Show commands
 set showcmd
 
@@ -169,6 +172,11 @@ nmap <leader>w :w!<cr>
 "map <space> /
 "map <c-space> ?
 
+" Let 'tl' toggle between this and the last accessed tab
+let g:lasttab = 1
+nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
+
 """"""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
@@ -228,7 +236,7 @@ let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowBookmarks=1
 "nnoremap f :NERDTreeToggle
-let g:nerdtree_tabs_open_on_console_startup=1
+"let g:nerdtree_tabs_open_on_console_startup=1
 
 """""""""""""""""""
 " => Syntastic
