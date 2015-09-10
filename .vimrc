@@ -33,7 +33,7 @@ set completeopt=longest,menu
 
 " Highlight search results
 set hlsearch
-noremap <silent><leader>/ :nohls<CR>
+noremap <silent><leader>/ :nohlsearch<CR>
 
 " Makes search act like search in modern browsers
 set incsearch
@@ -91,7 +91,7 @@ set selection=inclusive
 " Turn on the WiLd menu
 set wildmenu
 
-set mousemodel=popup
+"set mousemodel=popup
 
 " No annoying sound on errors
 set noerrorbells
@@ -156,7 +156,7 @@ filetype plugin indent on
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
-  set mouse=a
+  set mouse-=a
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -179,6 +179,12 @@ nnoremap <leader>q :q<CR>
 map <space> /
 map <c-space> ?
 
+" Useful mappings for managing tabs
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove 
+map <leader>t<leader> :tabnext <CR>
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
 nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
@@ -281,6 +287,18 @@ omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
+"""""""""""""""""""""""""""""""""""
+" => YouCompleteMe
+"""""""""""""""""""""""""""""""""""
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -306,11 +324,15 @@ map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
 
-"Treat long lines as break lines (useful when moving around in them)
+" Treat long lines as break lines (useful when moving around in them)
 nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+
+" Map ; to : and save a million keystrokes
+" ex mode commands made easy
+nnoremap ; :
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
