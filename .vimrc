@@ -4,11 +4,6 @@
 set t_Co=256
 set background=dark
 " Colorscheme
-"colorscheme desert
-let g:solarized_contrast="normal"
-let g:solarized_visibility="normal"
-let g:solarized_termcolors=256
-let g:solarized_termtrans = 1
 colorscheme solarized
 
 " Set font according to system
@@ -33,7 +28,6 @@ set completeopt=longest,menu
 
 " Highlight search results
 set hlsearch
-noremap <silent><leader>/ :nohlsearch<CR>
 
 " Makes search act like search in modern browsers
 set incsearch
@@ -169,6 +163,7 @@ set history=500
 " like <leader>w saves the current file
 let mapleader = ","
 let g:mapleader = ","
+noremap <silent><leader>/ :nohlsearch<CR>
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -239,7 +234,7 @@ let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowBookmarks=1
 "nnoremap f :NERDTreeToggle
-"let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_console_startup=1
 
 """""""""""""""""""
 " => Syntastic
@@ -260,6 +255,9 @@ let g:syntastic_javascript_checkers = ['eslint']
 " => Airline settings
 """""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_theme='molokai'
 
 """""""""""""""""""""""""""
 " => EasyMotion settings
@@ -381,6 +379,7 @@ Plugin 'ctrlp-modified.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jslint.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'juvenn/mustache.vim'
