@@ -8,7 +8,7 @@ colorscheme solarized
 
 " Set font according to system
 if has("mac") || has("macunix")
-  set guifont=Source\ Code\ Pro:h12,Menlo:h12
+  set guifont=Liberation_Mono_for_Powerline:h14,Source\ Code\ Pro:h14,Menlo:h14
 endif
 
 " Use Unix as the standard file type
@@ -255,9 +255,11 @@ let g:syntastic_javascript_checkers = ['eslint']
 " => Airline settings
 """""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+"let g:Powerline_symbols = 'fancy'
 "let g:airline#extensions#tabline#left_sep = ' '
 "let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme='molokai'
+let g:airline_theme='wombat'
 
 """""""""""""""""""""""""""
 " => EasyMotion settings
