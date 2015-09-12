@@ -4,12 +4,12 @@
 set t_Co=256
 set background=dark
 " Colorscheme
-colorscheme desert
-"let g:solarized_contrast="normal"
-"let g:solarized_visibility="normal"
-"let g:solarized_termcolors=256
-"let g:solarized_termtrans = 1
-"colorscheme solarized
+"colorscheme desert
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
+let g:solarized_termcolors=256
+let g:solarized_termtrans = 1
+colorscheme solarized
 
 " Set font according to system
 if has("mac") || has("macunix")
@@ -323,6 +323,10 @@ map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
 
 " Treat long lines as break lines (useful when moving around in them)
 nnoremap k gk
@@ -390,10 +394,10 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'mxw/vim-jsx'
 Plugin 'majutsushi/tagbar'
-Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'python-syntax'
 Plugin 'nono/jquery.vim'
+Plugin 'Raimondi/delimitMate'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
