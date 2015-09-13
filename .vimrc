@@ -69,8 +69,9 @@ set smartindent
 " Auto indent
 set autoindent
 
-" Wrap lines
-set wrap
+" EOL
+set nowrap
+
 " for c lang
 set cindent
 
@@ -204,6 +205,8 @@ map <C-w> <C-w>w
 inoremap <C-j> <ESC>
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
+" copy
+"vnoremap <Leader>y "+y
 
 """""""""""""""""""""""
 " => Taglist settings
@@ -239,7 +242,7 @@ let NERDTreeIgnore=['\.pyc']
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowBookmarks=1
-"nnoremap f :NERDTreeToggle
+nnoremap f :NERDTreeToggle
 let g:nerdtree_tabs_open_on_console_startup=1
 
 """""""""""""""""""
@@ -253,7 +256,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_html_tidy_exec = 'tidy5'
-"let g:syntastic_python_checkers=['pylint']
+let g:syntastic_python_checkers=['pylint']
 let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
 let g:syntastic_javascript_checkers = ['eslint']
 
@@ -262,9 +265,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 """""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-"let g:Powerline_symbols = 'fancy'
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:Powerline_symbols = 'fancy'
 let g:airline_theme='wombat'
 
 """""""""""""""""""""""""""
@@ -394,6 +395,7 @@ Plugin 'juvenn/mustache.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
 Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-multiple-cursors'
