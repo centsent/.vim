@@ -268,6 +268,11 @@ let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
 let g:airline_theme='wombat'
 
+""""""""""""""""""""""""""""""""""
+" => Tagbar
+""""""""""""""""""""""""""""""""""
+nmap tb :TagbarToggle<CR>
+
 """""""""""""""""""""""""""
 " => EasyMotion settings
 """""""""""""""""""""""""""
