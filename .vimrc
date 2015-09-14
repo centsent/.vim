@@ -176,15 +176,24 @@ map <space> /
 map <c-space> ?
 
 " Useful mappings for managing tabs
+nnoremap <C-t> :tabnew<CR>
+inoremap <C-t> <Esc>:tabnew<CR>
+nnoremap <leader>p :tabprevious<CR>
+nnoremap <leader>n   :tabnext<CR>
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 map <leader>t<leader> :tabnext <CR>
-" Let 'tl' toggle between this and the last accessed tab
-let g:lasttab = 1
-nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -208,15 +217,6 @@ nnoremap U <C-r>
 " copy
 "vnoremap <Leader>y "+y
 
-"""""""""""""""""""""""
-" => Taglist settings
-"""""""""""""""""""""""
-let Tlist_Show_One_File = 1
-let Tlist_File_Fold_Auto_Close = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Use_Right_Window = 1
-nmap tl :Tlist<cr>
-
 """""""""""""""""""""""""""
 " => Autoreload .vimrc
 """""""""""""""""""""""""""
@@ -230,7 +230,8 @@ map <silent> <leader>ee :e ~/.vimrc<cr>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.png,*.jpg,*.gif     " MacOSX/Linux
 "set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.pyc,*.png,*.jpg,*.gif  " Windows
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = '\v\.(exe|so|dll)$'
+let g:ctrlp_custom_ignore = '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$'
+let g:ctrlp_working_path_mode=0
 let g:ctrlp_extensions = ['funky']
 
 """""""""""""""""""""""
@@ -256,7 +257,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_html_tidy_exec = 'tidy5'
-let g:syntastic_python_checkers=['pylint']
+let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
 let g:syntastic_javascript_checkers = ['eslint']
 
@@ -276,21 +277,12 @@ nmap tb :TagbarToggle<CR>
 """""""""""""""""""""""""""
 " => EasyMotion settings
 """""""""""""""""""""""""""
-" let g:EasyMotion_do_mapping = 0 " Disable default mappings
-" Bi-directional find motion
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-nmap s <Plug>(easymotion-s)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-s2)
-" Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
+nmap <Leader><leader>. <Plug>(easymotion-repeat)
+map <Leader><leader>h <Plug>(easymotion-linebackward)
+map <Leader><Leader>j <Plug>(easymotion-j)
+map <Leader><Leader>k <Plug>(easymotion-k)
+map <Leader><leader>l <Plug>(easymotion-lineforward)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 " These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
@@ -302,6 +294,10 @@ map  N <Plug>(easymotion-prev)
 """""""""""""""""""""""""""""""""""
 " => YouCompleteMe
 """""""""""""""""""""""""""""""""""
+let g:ycm_use_ultisnips_completer = 1
+let g:ycm_goto_buffer_command = 'horizontal-split'
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -311,11 +307,17 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
+""""""""""""""""""""""""""""""""""""""""""""
+" => vim hard time
+"""""""""""""""""""""""""""""""""""""""""""
+let g:hardtime_default_on = 1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remap VIM 0 to first non-blank character
-map 0 ^
+" Go to home and end using capitalized directions
+noremap H ^
+noremap L $
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
@@ -386,7 +388,6 @@ Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
 Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'vim-scripts/taglist.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'ctrlp-modified.vim'
@@ -412,6 +413,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'python-syntax'
 Plugin 'nono/jquery.vim'
 Plugin 'Raimondi/delimitMate'
+Plugin 'takac/vim-hardtime'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
