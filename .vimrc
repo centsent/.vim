@@ -231,7 +231,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.png,*.jpg,*.gif     " MacOSX/Li
 "set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.pyc,*.png,*.jpg,*.gif  " Windows
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$'
-let g:ctrlp_working_path_mode=0
+"let g:ctrlp_working_path_mode=0
 let g:ctrlp_extensions = ['funky']
 
 """""""""""""""""""""""
@@ -243,7 +243,7 @@ let NERDTreeIgnore=['\.pyc']
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowBookmarks=1
-nnoremap f :NERDTreeToggle
+nnoremap <leader>f :NERDTreeToggle<CR>
 let g:nerdtree_tabs_open_on_console_startup=1
 
 """""""""""""""""""
@@ -278,11 +278,11 @@ nmap tb :TagbarToggle<CR>
 " => EasyMotion settings
 """""""""""""""""""""""""""
 let g:EasyMotion_smartcase = 1
-nmap <Leader><leader>. <Plug>(easymotion-repeat)
-map <Leader><leader>h <Plug>(easymotion-linebackward)
-map <Leader><Leader>j <Plug>(easymotion-j)
-map <Leader><Leader>k <Plug>(easymotion-k)
-map <Leader><leader>l <Plug>(easymotion-lineforward)
+nmap <leader>. <Plug>(easymotion-repeat)
+map <leader>h <Plug>(easymotion-linebackward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <leader>l <Plug>(easymotion-lineforward)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 " These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
@@ -307,11 +307,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
-""""""""""""""""""""""""""""""""""""""""""""
-" => vim hard time
-"""""""""""""""""""""""""""""""""""""""""""
-let g:hardtime_default_on = 1
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -332,10 +327,6 @@ if has("mac") || has("macunix")
   vmap <D-k> <M-k>
 endif
 
-" hjkl
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
 map <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
@@ -413,7 +404,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'python-syntax'
 Plugin 'nono/jquery.vim'
 Plugin 'Raimondi/delimitMate'
-Plugin 'takac/vim-hardtime'
+Plugin 'vim-ruby/vim-ruby'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
