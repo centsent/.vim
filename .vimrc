@@ -307,11 +307,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
-""""""""""""""""""""""""""""""""""""""""""""
-" => vim hard time
-"""""""""""""""""""""""""""""""""""""""""""
-let g:hardtime_default_on = 1
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -413,7 +408,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'python-syntax'
 Plugin 'nono/jquery.vim'
 Plugin 'Raimondi/delimitMate'
-Plugin 'takac/vim-hardtime'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
