@@ -239,14 +239,14 @@ let g:ctrlp_extensions = ['funky']
 """""""""""""""""""""""
 " => NERDTree settings
 """""""""""""""""""""""
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"autocmd vimenter * if !argc() | NERDTree | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore=['\.pyc']
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowBookmarks=1
 nnoremap <leader>f :NERDTreeToggle<CR>
-let g:nerdtree_tabs_open_on_console_startup=1
+"let g:nerdtree_tabs_open_on_console_startup=1
 
 """""""""""""""""""
 " => Syntastic
@@ -406,10 +406,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'python-syntax'
 Plugin 'nono/jquery.vim'
 Plugin 'Raimondi/delimitMate'
-<<<<<<< HEAD
 Plugin 'vim-ruby/vim-ruby'
-=======
->>>>>>> 03ca00f8d81dbf42aef83e2febee6c2f2babdd0a
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
