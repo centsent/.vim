@@ -142,6 +142,11 @@ set termencoding=utf-8
 set encoding=utf8
 set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
 
+" Cursor shape
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
 " Enable syntax highlighting
 syntax enable
 syntax on
@@ -151,7 +156,7 @@ filetype plugin on
 filetype indent on
 filetype plugin indent on
 
-" In many terminal emulators the mouse works just fine, thus enable it.
+" In many terminal emulators the mouse works just fine, thus dsabale it.
 if has('mouse')
   set mouse-=a
 endif
@@ -197,14 +202,6 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 
-""""""""""""""""""""""""""""""
-" => Visual mode related
-""""""""""""""""""""""""""""""
-" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :call VisualSelection('f', '')<CR>
-vnoremap <silent> # :call VisualSelection('b', '')<CR>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keyboard shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -217,7 +214,8 @@ inoremap <C-j> <ESC>
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
 " copy
-"vnoremap <Leader>y "+y
+vnoremap <Leader>y "+y
+vnoremap <Leader>p "+p
 
 """""""""""""""""""""""""""
 " => Autoreload .vimrc
@@ -246,7 +244,8 @@ let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowBookmarks=1
 nnoremap <leader>f :NERDTreeToggle<CR>
-"let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_gui_startup=0
+let g:nerdtree_tabs_open_on_console_startup=0
 
 """""""""""""""""""
 " => Syntastic
@@ -254,8 +253,8 @@ nnoremap <leader>f :NERDTreeToggle<CR>
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_html_tidy_exec = 'tidy5'
