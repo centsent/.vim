@@ -4,6 +4,8 @@
 set t_Co=256
 set background=dark
 " Colorscheme
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 colorscheme solarized
 
 " Set font according to system
@@ -404,7 +406,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'python-syntax'
 Plugin 'nono/jquery.vim'
 Plugin 'Raimondi/delimitMate'
+<<<<<<< HEAD
 Plugin 'vim-ruby/vim-ruby'
+=======
+>>>>>>> 03ca00f8d81dbf42aef83e2febee6c2f2babdd0a
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
