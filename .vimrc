@@ -253,21 +253,21 @@ let g:nerdtree_tabs_open_on_console_startup=0
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_html_tidy_exec = 'tidy5'
+"let g:syntastic_always_populate_loc_list=1
+"let g:syntastic_auto_loc_list=1
+"let g:syntastic_check_on_open=1
+"let g:syntastic_check_on_wq=1
+let g:syntastic_html_tidy_exec='tidy5'
 let g:syntastic_python_checkers=['pyflakes']
-let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
-let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
+let g:syntastic_javascript_checkers=['eslint', 'jscs']
 
 """""""""""""""""""""""""""
 " => Airline settings
 """""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts=1
+let g:Powerline_symbols='fancy'
 let g:airline_theme='wombat'
 
 """"""""""""""""""""""""""""""""""
@@ -403,7 +403,6 @@ Plugin 'mxw/vim-jsx'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
 Plugin 'python-syntax'
-Plugin 'nono/jquery.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-ruby/vim-ruby'
 " All of your Plugins must be added before the following line
