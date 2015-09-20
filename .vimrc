@@ -174,7 +174,7 @@ let g:mapleader = ","
 noremap <silent><leader>/ :nohlsearch<CR>
 
 " Fast saving
-nmap <leader>w :w!<cr>
+nnoremap <leader>w :w!<cr>
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
 
@@ -187,11 +187,9 @@ nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
 nnoremap <leader>p :tabprevious<CR>
 nnoremap <leader>n   :tabnext<CR>
-map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext <CR>
 noremap <leader>1 1gt
 noremap <leader>2 2gt
 noremap <leader>3 3gt
@@ -216,6 +214,8 @@ nnoremap U <C-r>
 " copy
 vnoremap <Leader>y "+y
 vnoremap <Leader>p "+p
+" delete line
+inoremap <C-d> <esc>ddi
 
 """""""""""""""""""""""""""
 " => Autoreload .vimrc
@@ -237,15 +237,15 @@ let g:ctrlp_extensions = ['funky']
 """""""""""""""""""""""
 " => NERDTree settings
 """""""""""""""""""""""
-"autocmd vimenter * if !argc() | NERDTree | endif
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore=['\.pyc']
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowBookmarks=1
 nnoremap <leader>f :NERDTreeToggle<CR>
-let g:nerdtree_tabs_open_on_gui_startup=0
-let g:nerdtree_tabs_open_on_console_startup=0
+let g:nerdtree_tabs_open_on_gui_startup=1
+let g:nerdtree_tabs_open_on_console_startup=1
 
 """""""""""""""""""
 " => Syntastic
@@ -273,13 +273,13 @@ let g:airline_theme='wombat'
 """"""""""""""""""""""""""""""""""
 " => Tagbar
 """"""""""""""""""""""""""""""""""
-nmap tb :TagbarToggle<CR>
+nnoremap tb :TagbarToggle<CR>
 
 """""""""""""""""""""""""""
 " => EasyMotion settings
 """""""""""""""""""""""""""
 let g:EasyMotion_smartcase = 1
-nmap <leader>. <Plug>(easymotion-repeat)
+nnoremap <leader>. <Plug>(easymotion-repeat)
 map <leader>h <Plug>(easymotion-linebackward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
@@ -316,19 +316,26 @@ noremap H ^
 noremap L $
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+nnoremap <M-j> mz:m+<cr>`z
+nnoremap <M-k> mz:m-2<cr>`z
+vnoremap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+vnoremap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 if has("mac") || has("macunix")
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
+  nnoremap <D-j> <M-j>
+  nnoremap <D-k> <M-k>
+  vnoremap <D-j> <M-j>
+  vnoremap <D-k> <M-k>
 endif
 
-map <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+vnoremap <Left> <Nop>
+vnoremap <Right> <Nop>
+vnoremap <Up> <Nop>
+vnoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 inoremap <Up> <Nop>
@@ -376,19 +383,18 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'The-NERD-Commenter'
 Plugin 'mattn/emmet-vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'einars/js-beautify'
+"Plugin 'maksimr/vim-jsbeautify'
+"Plugin 'einars/js-beautify'
 Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'ctrlp-modified.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'jslint.vim'
+"Plugin 'jslint.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 Plugin 'digitaltoad/vim-jade'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'juvenn/mustache.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -405,6 +411,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'python-syntax'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-haml'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
