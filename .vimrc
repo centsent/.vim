@@ -209,6 +209,7 @@ map <C-w> <C-w>w
 "map <C-h> <C-W>h
 "map <C-l> <C-W>l
 inoremap <C-j> <ESC>
+inoremap <esc> <nop>
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
 " copy
@@ -260,7 +261,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 let g:syntastic_html_tidy_exec='tidy5'
 let g:syntastic_python_checkers=['pyflakes']
 "let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
-let g:syntastic_javascript_checkers=['eslint', 'jscs']
+let g:syntastic_javascript_checkers=['eslint']
 
 """""""""""""""""""""""""""
 " => Airline settings
