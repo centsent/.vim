@@ -413,6 +413,7 @@ Plugin 'python-syntax'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-haml'
+Plugin 'klen/python-mode'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
