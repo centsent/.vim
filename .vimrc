@@ -254,10 +254,10 @@ let g:nerdtree_tabs_open_on_console_startup=1
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
-"let g:syntastic_always_populate_loc_list=1
-"let g:syntastic_auto_loc_list=1
-"let g:syntastic_check_on_open=1
-"let g:syntastic_check_on_wq=1
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=1
 let g:syntastic_html_tidy_exec='tidy5'
 let g:syntastic_python_checkers=['pyflakes']
 "let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
@@ -292,6 +292,16 @@ omap / <Plug>(easymotion-tn)
 " different highlight method and have some other features )
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
+
+"""""""""""""""""""""""""""""""""""
+" => jsbeautify
+"""""""""""""""""""""""""""""""""""
+" for js
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
 """""""""""""""""""""""""""""""""""
 " => YouCompleteMe
@@ -384,8 +394,8 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'The-NERD-Commenter'
 Plugin 'mattn/emmet-vim'
 Plugin 'kien/ctrlp.vim'
-"Plugin 'maksimr/vim-jsbeautify'
-"Plugin 'einars/js-beautify'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'einars/js-beautify'
 Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-rails'
