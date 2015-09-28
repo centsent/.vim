@@ -71,14 +71,13 @@ set smartindent
 " Auto indent
 set autoindent
 
-" EOL
-set nowrap
+set wrap
 
 " for c lang
 set cindent
 
 " Linebreak on 1000 characters
-set linebreak
+"set linebreak
 "set textwidth=1000
 
 set formatoptions+=mB
