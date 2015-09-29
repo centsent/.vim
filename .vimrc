@@ -303,6 +303,21 @@ autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
 """""""""""""""""""""""""""""""""""
+" => vim-go
+"""""""""""""""""""""""""""""""""""
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+"""""""""""""""""""""""""""""""""""
 " => YouCompleteMe
 """""""""""""""""""""""""""""""""""
 let g:ycm_use_ultisnips_completer = 1
@@ -401,7 +416,6 @@ Plugin 'tpope/vim-rails'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'ctrlp-modified.vim'
 Plugin 'pangloss/vim-javascript'
-"Plugin 'jslint.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 Plugin 'digitaltoad/vim-jade'
@@ -423,6 +437,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-haml'
 Plugin 'klen/python-mode'
+Plugin 'fatih/vim-go'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
