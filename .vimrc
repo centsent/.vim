@@ -318,6 +318,13 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 """""""""""""""""""""""""""""""""""
+" => python-mode
+"""""""""""""""""""""""""""""""""""
+let g:pymode_rope = 0
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope_complete_on_dot = 0
+
+"""""""""""""""""""""""""""""""""""
 " => YouCompleteMe
 """""""""""""""""""""""""""""""""""
 let g:ycm_use_ultisnips_completer = 1
