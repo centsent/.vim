@@ -6,7 +6,7 @@ set background=dark
 " Colorscheme
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-colorscheme solarized
+colorscheme tomorrow-night-eighties
 
 " Set font according to system
 if has("mac") || has("macunix")
@@ -447,6 +447,7 @@ Plugin 'klen/python-mode'
 Plugin 'fatih/vim-go'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'udalov/kotlin-vim'
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
