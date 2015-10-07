@@ -4,14 +4,12 @@
 set t_Co=256
 set background=dark
 " Colorscheme
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-colorscheme tomorrow-night-eighties
+"let g:solarized_termcolors=256
+"let g:solarized_termtrans=1
+colorscheme gruvbox
 
 " Set font according to system
-if has("mac") || has("macunix")
-  set guifont=Liberation_Mono_for_Powerline:h14,Source\ Code\ Pro:h14,Menlo:h14
-endif
+set guifont=Liberation_Mono_for_Powerline:h14,Source\ Code\ Pro:h14,Menlo:h14
 
 " Use Unix as the standard file type
 set fileformats=unix,dos,mac
@@ -296,11 +294,12 @@ map  N <Plug>(easymotion-prev)
 " => jsbeautify
 """""""""""""""""""""""""""""""""""
 " for js
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+"autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
 " for html
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+"autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 " for css or scss
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+"autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+nnoremap <c-f> :Autoformat<CR>
 
 """""""""""""""""""""""""""""""""""
 " => vim-go
@@ -448,9 +447,9 @@ Plugin 'fatih/vim-go'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'udalov/kotlin-vim'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'Chiel92/vim-autoformat'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
 " Use Node.js for JavaScript interpretation, only work for me on Yosemite
 let $JS_CMD='node'
-
