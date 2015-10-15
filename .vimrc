@@ -4,9 +4,9 @@
 set t_Co=256
 set background=dark
 " Colorscheme
-"let g:solarized_termcolors=256
-"let g:solarized_termtrans=1
-colorscheme gruvbox
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+colorscheme solarized 
 
 " Set font according to system
 set guifont=Liberation_Mono_for_Powerline:h14,Source\ Code\ Pro:h14,Menlo:h14
@@ -324,6 +324,13 @@ let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_complete_on_dot = 0
 
 """""""""""""""""""""""""""""""""""
+" => ultisnips
+"""""""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+"""""""""""""""""""""""""""""""""""
 " => YouCompleteMe
 """""""""""""""""""""""""""""""""""
 let g:ycm_use_ultisnips_completer = 1
@@ -346,18 +353,11 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 noremap H ^
 noremap L $
 
-" Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nnoremap <M-j> mz:m+<cr>`z
-nnoremap <M-k> mz:m-2<cr>`z
-vnoremap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vnoremap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-if has("mac") || has("macunix")
-  nnoremap <D-j> <M-j>
-  nnoremap <D-k> <M-k>
-  vnoremap <D-j> <M-j>
-  vnoremap <D-k> <M-k>
-endif
+" Move a line of text 
+nnoremap <leader><leader>j mz:m+<cr>`z
+nnoremap <leader><leader>k mz:m-2<cr>`z
+vnoremap <leader><leader>j :m'>+<cr>`<my`>mzgv`yo`z
+vnoremap <leader><leader>k :m'<-2<cr>`>my`<mzgv`yo`z
 
 nnoremap <Left> <Nop>
 nnoremap <Right> <Nop>
@@ -430,6 +430,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-multiple-cursors'
@@ -448,6 +449,7 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'udalov/kotlin-vim'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'tomasr/molokai'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
