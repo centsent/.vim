@@ -354,23 +354,15 @@ noremap H ^
 noremap L $
 
 " Move a line of text 
-nnoremap <leader><leader>j mz:m+<cr>`z
-nnoremap <leader><leader>k mz:m-2<cr>`z
-vnoremap <leader><leader>j :m'>+<cr>`<my`>mzgv`yo`z
-vnoremap <leader><leader>k :m'<-2<cr>`>my`<mzgv`yo`z
+nnoremap <c-j> mz:m+<cr>`z
+nnoremap <c-k> mz:m-2<cr>`z
+vnoremap <c-j> :m'>+<cr>`<my`>mzgv`yo`z
+vnoremap <c-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
-nnoremap <Left> <Nop>
-nnoremap <Right> <Nop>
-nnoremap <Up> <Nop>
-nnoremap <Down> <Nop>
-vnoremap <Left> <Nop>
-vnoremap <Right> <Nop>
-vnoremap <Up> <Nop>
-vnoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
-inoremap <Up> <Nop>
-inoremap <Down> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
 
 " Treat long lines as break lines (useful when moving around in them)
 nnoremap k gk
