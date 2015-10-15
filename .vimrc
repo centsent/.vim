@@ -10,17 +10,14 @@ colorscheme solarized
 
 " Set font according to system
 set guifont=Liberation_Mono_for_Powerline:h14,Source\ Code\ Pro:h14,Menlo:h14
-
 " Use Unix as the standard file type
 set fileformats=unix,dos,mac
-
 "Always show current position
 set ruler
 " Show line number
 set number
 " Highlight current line
 set cursorline
-
 " Highlight current column
 "set cursorcolumn
 
@@ -28,44 +25,32 @@ set completeopt=longest,menu
 
 " Highlight search results
 set hlsearch
-
 " Makes search act like search in modern browsers
 set incsearch
-
 " Set 7 lines to the cursor - when moving vertically using j/k
 set scrolloff=7
-
 " Show commands
 set showcmd
-
 " For regular expressions turn magic on
 set magic
-
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
-
 " 1 tab == 2 spaces
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
-
 " No gui options
 set go=
-
 " Show matching brackets when text indicator is over them
 set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
-
 " Use spaces instead of tabs
 set expandtab
-
 " Be smart when using tabs ;)
 set smarttab
-
 " Smart indent
 set smartindent
-
 " Auto indent
 set autoindent
 
@@ -74,9 +59,9 @@ set wrap
 " for c lang
 set cindent
 
-" Linebreak on 1000 characters
-"set linebreak
-"set textwidth=1000
+" Linebreak on 1000 characters 
+set linebreak
+set textwidth=1000
 
 set formatoptions+=mB
 set sm
@@ -84,18 +69,14 @@ set selection=inclusive
 
 " Turn on the WiLd menu
 set wildmenu
-
 "set mousemodel=popup
-
 " No annoying sound on errors
 set noerrorbells
 
 " Set to auto read when a file is changed from the outside
 set autoread
-
 " Auto saving file
 set autowrite
-
 " Confirmation on unsave/readonly
 set confirm
 
@@ -106,7 +87,6 @@ set noswapfile
 
 " Ignore case when searching
 set ignorecase
-
 " When searching try to be smart about cases
 set smartcase
 
