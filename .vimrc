@@ -20,9 +20,7 @@ set number
 set cursorline
 " Highlight current column
 "set cursorcolumn
-
 set completeopt=longest,menu
-
 " Highlight search results
 set hlsearch
 " Makes search act like search in modern browsers
@@ -419,9 +417,8 @@ Plugin 'klen/python-mode'
 Plugin 'fatih/vim-go'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'udalov/kotlin-vim'
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'tomasr/molokai'
+Plugin 'flazz/vim-colorschemes'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
