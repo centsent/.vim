@@ -294,7 +294,14 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
-"""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""
+" => tern-for-vim
+"""""""""""""""""""""""""""""""""
+let g:tern_show_signature_in_pum = 1
+" Rename
+nnoremap <leader>tr :TernRename<cr>
+
+""""""""""""""""""""""""""""""""""n
 " => python-mode
 """""""""""""""""""""""""""""""""""
 let g:pymode_rope = 0
