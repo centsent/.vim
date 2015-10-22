@@ -433,6 +433,7 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'udalov/kotlin-vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'Valloric/MatchTagAlways'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
