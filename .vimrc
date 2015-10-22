@@ -184,9 +184,10 @@ inoremap <C-j> <ESC>
 inoremap <esc> <nop>
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
-" copy
+" copy paste cut
 vnoremap <Leader>y "+y
 vnoremap <Leader>p "+p
+vnoremap <leader>x "+d
 " delete line
 inoremap <C-d> <esc>ddi
 
