@@ -8,6 +8,8 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized 
 
+set title
+set showmode
 " Set font according to system
 set guifont=Liberation_Mono_for_Powerline:h14,Source\ Code\ Pro:h14,Menlo:h14
 " Use Unix as the standard file type
@@ -19,6 +21,7 @@ set number
 " Highlight current line
 set cursorline
 " Highlight current column
+set colorcolumn=81
 "set cursorcolumn
 set completeopt=longest,menu
 " Highlight search results
@@ -53,6 +56,7 @@ set smartindent
 set autoindent
 
 set wrap
+set showbreak=↪\ 
 
 " for c lang
 set cindent
