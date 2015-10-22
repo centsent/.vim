@@ -161,19 +161,10 @@ map <c-space> ?
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
 nnoremap <leader>p :tabprevious<CR>
-nnoremap <leader>n   :tabnext<CR>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
+nnoremap <leader>n :tabnext<CR>
+nnoremap <leader>to :tabonly<cr>
+nnoremap <leader>tc :tabclose<cr>
+nnoremap <leader>tm :tabmove 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keyboard shortcuts
@@ -184,6 +175,7 @@ noremap <leader>9 9gt
 " ----------------------------------------------------------------------------
 nnoremap <tab>   <c-w>w
 
+" <C-j> | Escaping!
 inoremap <C-j> <ESC>
 inoremap <esc> <nop>
 " remap U to <C-r> for easier redo
