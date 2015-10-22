@@ -6,7 +6,8 @@ set background=dark
 " Colorscheme
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-colorscheme solarized 
+colorscheme desert
+silent! colorscheme solarized 
 
 set title
 set showmode
@@ -229,6 +230,12 @@ let NERDTreeShowBookmarks=1
 nnoremap <leader>f :NERDTreeToggle<CR>
 let g:nerdtree_tabs_open_on_gui_startup=0
 let g:nerdtree_tabs_open_on_console_startup=0
+
+"""""""""""""""""""""
+" => NERD commenter
+"""""""""""""""""""""
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
 
 """""""""""""""""""
 " => Syntastic
