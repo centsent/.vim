@@ -51,9 +51,11 @@ def makeVimSoftLink():
 
 def main():
     # move ~/.vim to ~/.vim.bak
-    shutil.move(VIM_SOURCE, VIM_BAK_DEST)
+    if path.exists(VIM_SOURCE):
+        shutil.move(VIM_SOURCE, VIM_BAK_DEST)
     # move ~/.vimrc to ~/.vimrc.bak
-    shutil.move(VIMRC_SOURCE, VIMRC_BAK_DEST)
+    if path.exists(VIMRC_SOURCE):
+        shutil.move(VIMRC_SOURCE, VIMRC_BAK_DEST)
     # clone the git repo
     call(CLONE_REPO)
     # vundle init
