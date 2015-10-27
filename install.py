@@ -27,7 +27,7 @@ MY_REPO = 'https://github.com/centsent/vimrc.git'
 CLONE_REPO = [GIT, CLONE, MY_REPO, VIM_SOURCE]
 
 
-def vundleInit():
+def vundle_init():
     # check ~/.vim/bundle/Vundle.vim
     if not path.exists(VUNDLE_HOME):
         call(['mkdir', '-p', VUNDLE_HOME])
@@ -41,11 +41,11 @@ def vundleInit():
         '''
 
 
-def vundleInstallPlugin():
+def vundle_install_plugin():
     call(['vim', '-c', '"execute \"PluginInstall\" | qa"'])
 
 
-def makeVimSoftLink():
+def soft_link_vimrc():
     call(VIMRC_SOFT_LINK)
 
 
@@ -59,11 +59,11 @@ def main():
     # clone the git repo
     call(CLONE_REPO)
     # vundle init
-    vundleInit()
+    vundle_init()
     # install vim plugins
-    vundleInstallPlugin()
+    vundle_install_plugin()
     # soft link to vimrc
-    makeVimSoftLink()
+    soft_link_vimrc()
     # TODO install YouCompleteMe
     # TODO install tern-for-vim
 
