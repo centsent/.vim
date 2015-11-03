@@ -22,7 +22,7 @@ set number
 " Highlight current line
 set cursorline
 " Highlight current column
-set colorcolumn=81
+set colorcolumn=100
 "set cursorcolumn
 set completeopt=longest,menu
 " Highlight search results
@@ -147,6 +147,9 @@ endif
 " Sets how many lines of history VIM has to remember
 set history=500
 
+" clang-format
+let g:formatdef_clangformat_objc = '"clang-format -style=file"'
+
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
@@ -165,11 +168,11 @@ map <c-space> ?
 " Useful mappings for managing tabs
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
-nnoremap <leader>p :tabprevious<CR>
-nnoremap <leader>n :tabnext<CR>
-nnoremap <leader>to :tabonly<cr>
-nnoremap <leader>tc :tabclose<cr>
-nnoremap <leader>tm :tabmove 
+" nnoremap <leader>p :tabprevious<CR>
+" nnoremap <leader>n :tabnext<CR>
+" nnoremap <leader>to :tabonly<cr>
+" nnoremap <leader>tc :tabclose<cr>
+" nnoremap <leader>tm :tabmove 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keyboard shortcuts
