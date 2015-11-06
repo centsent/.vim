@@ -318,13 +318,6 @@ let g:tern_show_signature_in_pum = 1
 " Rename
 nnoremap <leader>tr :TernRename<cr>
 
-""""""""""""""""""""""""""""""""""n
-" => python-mode
-"""""""""""""""""""""""""""""""""""
-let g:pymode_rope = 0
-let g:pymode_rope_lookup_project = 0
-let g:pymode_rope_complete_on_dot = 0
-
 """""""""""""""""""""""""""""""""""
 " => ultisnips
 """""""""""""""""""""""""""""""""""
