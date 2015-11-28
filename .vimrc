@@ -192,6 +192,10 @@ let g:mapleader = ","
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 map <c-space> ?
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Autoreload .vimrc
@@ -221,6 +225,8 @@ nnoremap <c-f> :Autoformat<CR>
 " Move a line of text 
 nnoremap <c-j> mz:m+<cr>`z
 nnoremap <c-k> mz:m-2<cr>`z
+" Toggle tagbar
+nnoremap tb :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Insert Mode
@@ -228,7 +234,6 @@ nnoremap <c-k> mz:m-2<cr>`z
 " <C-j> | Escaping!
 inoremap <C-j> <ESC>
 inoremap <esc> <nop>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Visual Mode
@@ -246,3 +251,40 @@ let g:airline_powerline_fonts=1
 let g:Powerline_symbols='fancy'
 let g:airline_theme='wombat'
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NERDTree settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeIgnore=['\.pyc']
+let NERDTreeShowHidden=1
+let NERDTreeShowLineNumbers=1
+let NERDTreeShowBookmarks=1
+nnoremap <leader>f :NERDTreeToggle<CR>
+let g:nerdtree_tabs_open_on_gui_startup=0
+let g:nerdtree_tabs_open_on_console_startup=0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NERD commenter
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ctrlp settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.png,*.jpg,*.gif     " MacOSX/Linux
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+" Disable archive files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+" Ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+" Ignore node modules
+set wildignore+=*/node_modules/*
+" Disable temp and backup files
+set wildignore+=*.swp,*~,._*
+"set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.pyc,*.png,*.jpg,*.gif  " Windows
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$'
+"let g:ctrlp_working_path_mode=0
+let g:ctrlp_extensions = ['funky']
