@@ -98,6 +98,8 @@ set showmatch
 set matchtime=1
 set scrolloff=3
 set iskeyword+=_,$,@,%,#,-,.
+" Always show the status line
+set laststatus=2
 " A buffer becomes hidden when it is abandoned
 set hid
 " Highlight syntax
@@ -169,3 +171,13 @@ inoremap <esc> <nop>
 vnoremap <Leader>y "+y
 vnoremap <Leader>p "+p
 vnoremap <leader>x "+d
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Airline settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts=1
+let g:Powerline_symbols='fancy'
+let g:airline_theme='wombat'
+
