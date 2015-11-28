@@ -5,11 +5,11 @@ let is_init=0
 let vundle_home = '~/.vim/bundle/Vundle.vim/'
 let vundle_readme=expand(vundle_home.'README.md')
 if !filereadable(vundle_readme)
-  echo "Installing Vundle..."
-  echo ""
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  let is_init=1
+	echo "Installing Vundle..."
+	echo ""
+	silent !mkdir -p ~/.vim/bundle
+	silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	let is_init=1
 endif
 
 set nocompatible
@@ -64,9 +64,9 @@ Plugin 'Valloric/MatchTagAlways'
 call vundle#end()            " required
 
 if is_init == 1
-  echo "Installing Bundles, please ignore key map error messages"
-  echo ""
-  :PluginInstall
+	echo "Installing Bundles, please ignore key map error messages"
+	echo ""
+	:PluginInstall
 endif
 "}}
 
@@ -81,10 +81,40 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 " colorscheme desert
 silent! colorscheme solarized  
+set guifont=Liberation_Mono_for_Powerline:h14,Source\ Code\ Pro:h14,Menlo:h14
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Basic settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set title
+set showmode
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+"Always show current position
+set ruler
+" Show line number
+set number
+" Highlight current line
+set cursorline
+set colorcolumn=80
+" Highlight search results
+set hlsearch
+" Makes search act like search in modern browsers
+set incsearch
+" No gui options
+set go=
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+" Use spaces instead of tabs
+set expandtab
+" Be smart when using tabs ;)
+set smarttab
+" Smart indent
+set smartindent
+" Auto indent
+set autoindent
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
@@ -98,8 +128,32 @@ set showmatch
 set matchtime=1
 set scrolloff=3
 set iskeyword+=_,$,@,%,#,-,.
+" Show matching brackets when text indicator is over them
+set showmatch
+" How many tenths of a second to blink when matching brackets
+set mat=2
+" Wrap text
+set wrap
+set showbreak=↪\ 
+" Turn on the WiLd menu
+set wildmenu
+"set mousemodel=popup
+" No annoying sound on errors
+set noerrorbells
+" Set to auto read when a file is changed from the outside
+set autoread
+" Auto saving file
+set autowrite
+" Confirmation on unsave/readonly
+set confirm
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
 " Always show the status line
 set laststatus=2
+" Height of the command bar
+set cmdheight=2
 " A buffer becomes hidden when it is abandoned
 set hid
 " Highlight syntax
@@ -114,6 +168,18 @@ filetype plugin indent on
 set termencoding=utf-8
 set encoding=utf8
 set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
+" Use Unix as the standard file type
+set fileformats=unix,dos,mac
+" Set 7 lines to the cursor - when moving vertically using j/k
+set scrolloff=7
+" Show commands
+set showcmd
+" For regular expressions turn magic on
+set magic
+" Ignore case when searching
+set ignorecase
+" When searching try to be smart about cases
+set smartcase
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Remap keys
@@ -171,7 +237,6 @@ inoremap <esc> <nop>
 vnoremap <Leader>y "+y
 vnoremap <Leader>p "+p
 vnoremap <leader>x "+d
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline settings
