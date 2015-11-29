@@ -5,11 +5,11 @@ let is_init=0
 let vundle_home = '~/.vim/bundle/Vundle.vim/'
 let vundle_readme=expand(vundle_home.'README.md')
 if !filereadable(vundle_readme)
-	echo "Installing Vundle..."
-	echo ""
-	silent !mkdir -p ~/.vim/bundle
-	silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	let is_init=1
+  echo "Installing Vundle..."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  let is_init=1
 endif
 
 set nocompatible
@@ -64,9 +64,9 @@ Plugin 'Valloric/MatchTagAlways'
 call vundle#end()            " required
 
 if is_init == 1
-	echo "Installing Bundles, please ignore key map error messages"
-	echo ""
-	:PluginInstall
+  echo "Installing Bundles, please ignore key map error messages"
+  echo ""
+  :PluginInstall
 endif
 "}}
 
@@ -182,6 +182,7 @@ set ignorecase
 set smartcase
 " Sets how many lines of history VIM has to remember
 set history=500
+
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
   exe "normal mz"
@@ -190,6 +191,18 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+" Switch cursor from block in insert mode
+if exists('$ITERM_PROFILE')
+  " Swap iTerm2 cursors in vim insert mode when using tmux
+  if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  endif
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Remap keys
