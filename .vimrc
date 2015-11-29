@@ -137,7 +137,7 @@ set wrap
 set showbreak=↪\ 
 " Turn on the WiLd menu
 set wildmenu
-"set mousemodel=popup
+" set mousemodel=popup
 " No annoying sound on errors
 set noerrorbells
 " Set to auto read when a file is changed from the outside
@@ -156,7 +156,7 @@ set laststatus=2
 set cmdheight=2
 " A buffer becomes hidden when it is abandoned
 set hid
-" Highlight syntax
+" Enable syntax highlighting
 syntax enable
 syntax on
 " Enable filetype plugins
@@ -180,6 +180,16 @@ set magic
 set ignorecase
 " When searching try to be smart about cases
 set smartcase
+" Sets how many lines of history VIM has to remember
+set history=500
+" Delete trailing white space on save, useful for Python and CoffeeScript ;)
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+autocmd BufWrite *.py :call DeleteTrailingWS()
+autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Remap keys
@@ -215,6 +225,8 @@ nnoremap <leader>q :q<CR>
 " Go to home and end using capitalized directions
 noremap H ^
 noremap L $
+" remap U to <C-r> for easier redo
+nnoremap U <C-r>
 " Treat long lines as break lines (useful when moving around in them)
 nnoremap k gk
 nnoremap gk k
@@ -227,6 +239,12 @@ nnoremap <c-j> mz:m+<cr>`z
 nnoremap <c-k> mz:m-2<cr>`z
 " Toggle tagbar
 nnoremap tb :TagbarToggle<CR>
+" <tab> | Circular windows navigation
+nnoremap <tab>   <c-w>w
+" Useful mappings for managing tabs
+nnoremap <C-t> :tabnew<CR>
+nnoremap <leader>p :tabprevious<CR>
+nnoremap <leader>n :tabnext<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Insert Mode
@@ -234,6 +252,8 @@ nnoremap tb :TagbarToggle<CR>
 " <C-j> | Escaping!
 inoremap <C-j> <ESC>
 inoremap <esc> <nop>
+" delete line
+inoremap <C-d> <esc>ddi
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Visual Mode
@@ -352,4 +372,11 @@ let g:syntastic_check_on_wq=1
 let g:syntastic_html_tidy_exec='tidy5'
 let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_javascript_checkers=['eslint']
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => tern-for-vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:tern_show_signature_in_pum = 1
+" Rename
+nnoremap <leader>tr :TernRename<cr>
 
