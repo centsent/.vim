@@ -266,7 +266,11 @@ nnoremap <leader>n :tabnext<CR>
 inoremap <C-j> <ESC>
 inoremap <esc> <nop>
 " delete line
-inoremap <C-d> <esc>ddi
+" inoremap <C-d> <esc>ddi
+
+" Combining move and scroll
+inoremap <silent> <C-d> <C-\><C-O><C-D>
+inoremap <silent> <C-u> <C-\><C-O><C-U>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Visual Mode
