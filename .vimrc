@@ -393,7 +393,7 @@ let g:syntastic_javascript_checkers=['eslint']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => tern-for-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:tern_show_signature_in_pum = 1
+" let g:tern_show_signature_in_pum = 1
 " Rename
 nnoremap <leader>tr :TernRename<cr>
 
