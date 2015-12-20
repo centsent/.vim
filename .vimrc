@@ -48,7 +48,6 @@ Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-multiple-cursors'
 Plugin 'marijnh/tern_for_vim'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'mxw/vim-jsx'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
@@ -59,7 +58,6 @@ Plugin 'tpope/vim-haml'
 Plugin 'klen/python-mode'
 Plugin 'fatih/vim-go'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'Valloric/MatchTagAlways'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
