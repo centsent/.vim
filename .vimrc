@@ -182,6 +182,8 @@ set ignorecase
 set smartcase
 " Sets how many lines of history VIM has to remember
 set history=500
+" No preview window
+set completeopt-=preview
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
