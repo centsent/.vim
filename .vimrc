@@ -349,7 +349,7 @@ map  N <Plug>(easymotion-prev)
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 let g:ycm_use_ultisnips_completer = 0
-" let g:ycm_goto_buffer_command = 'horizontal-split'
+let g:ycm_goto_buffer_command = 'horizontal-split'
 let g:ycm_complete_in_comments = 1 
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_seed_identifiers_with_syntax=1
@@ -393,7 +393,7 @@ let g:syntastic_javascript_checkers=['eslint']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => tern-for-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:tern_show_signature_in_pum = 1
+let g:tern_show_signature_in_pum = 1
 " Rename
 nnoremap <leader>tr :TernRename<cr>
 
