@@ -195,16 +195,16 @@ autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 " Switch cursor from block in insert mode
-if exists('$ITERM_PROFILE')
-  " Swap iTerm2 cursors in vim insert mode when using tmux
-  if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-  else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-  endif
-endif
+" if exists('$ITERM_PROFILE')
+  " " Swap iTerm2 cursors in vim insert mode when using tmux
+  " if exists('$TMUX')
+    " let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    " let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  " else
+    " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    " let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  " endif
+" endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Remap keys
