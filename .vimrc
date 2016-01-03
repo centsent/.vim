@@ -17,8 +17,6 @@ set nocompatible
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -277,9 +275,11 @@ inoremap <silent> <C-u> <C-\><C-O><C-U>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Visual Mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" copy paste cut
+" copy
 vnoremap <Leader>y "+y
+" paste
 vnoremap <Leader>p "+p
+" cut
 vnoremap <leader>x "+d
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -401,3 +401,9 @@ nnoremap <leader>tr :TernRename<cr>
 let g:tern_show_argument_hints='on_hold'
 " and 
 let g:tern_map_keys=1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => tern-for-vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Allow JSX in normal JS files
+let g:jsx_ext_required = 0 
