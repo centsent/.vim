@@ -392,7 +392,13 @@ let g:tern_show_argument_hints='on_hold'
 let g:tern_map_keys=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => tern-for-vim
+" => jsx
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Allow JSX in normal JS files
 let g:jsx_ext_required = 0 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => makefile
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufNewFile,BufRead *[mM]akefile setf make
+autocmd FileType make setlocal noexpandtab
