@@ -59,6 +59,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
 Plugin 'djoshea/vim-autoread'
+Plugin 'tpope/vim-fugitive'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -275,8 +276,8 @@ vnoremap <leader>x "+d
 " => Airline settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts=1
-let g:Powerline_symbols='fancy'
+" let g:airline_powerline_fonts=1
+" let g:Powerline_symbols='fancy'
 " let g:airline_theme='wombat'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
