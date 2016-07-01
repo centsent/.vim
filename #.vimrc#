@@ -12,7 +12,7 @@ if !filereadable(vundle_readme)
   let is_init=1
 endif
 
-set nocompatible
+
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -186,13 +186,13 @@ set history=500
 set completeopt-=preview
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
-" func! DeleteTrailingWS()
-  " exe "normal mz"
-  " %s/\s\+$//ge
-  " exe "normal `z"
-" endfunc
-" autocmd BufWrite *.py :call DeleteTrailingWS()
-" autocmd BufWrite *.coffee :call DeleteTrailingWS()
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+autocmd BufWrite *.py :call DeleteTrailingWS()
+autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Remap keys
@@ -390,9 +390,6 @@ let g:syntastic_check_on_wq=1
 let g:syntastic_html_tidy_exec='tidy'
 let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_java_checkers=['javac']
-let g:syntastic_java_javac_classpath = './lib/*.jar;./src'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => tern-for-vim
