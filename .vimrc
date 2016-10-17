@@ -1,72 +1,49 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vundle settings
+" => Plug settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let is_init=0
-let vundle_home = '~/.vim/bundle/Vundle.vim/'
-let vundle_readme=expand(vundle_home.'README.md')
-if !filereadable(vundle_readme)
-  echo "Installing Vundle..."
+let plug_vim = expand('~/.vim/autoload/plug.vim')
+if !filereadable(plug_vim)
+  echo "Installing Plug.vim..."
   echo ""
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   let is_init=1
 endif
 
 set nocompatible
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/bundle')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-" Keep Plugin commands between vundle#begin/end.
-Plugin 'easymotion/vim-easymotion'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'The-NERD-Commenter'
-Plugin 'mattn/emmet-vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'einars/js-beautify'
-Plugin 'scrooloose/syntastic'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'tpope/vim-rails'
-Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'ctrlp-modified.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'juvenn/mustache.vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'mileszs/ack.vim'
-Plugin 'bling/vim-airline'
-Plugin 'vim-multiple-cursors'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'mxw/vim-jsx'
-Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-surround'
-Plugin 'python-syntax'
-Plugin 'Raimondi/delimitMate'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-haml'
-Plugin 'klen/python-mode'
-Plugin 'fatih/vim-go'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'djoshea/vim-autoread'
-Plugin 'tpope/vim-fugitive'
+" Keep Plugin commands between plug#begin/end.
+Plug 'easymotion/vim-easymotion'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" nerdtree group dependencies
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'The-NERD-Commenter'
+Plug 'scrooloose/syntastic'
+Plug 'mattn/emmet-vim'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'editorconfig/editorconfig-vim'
+" ctrlp group dependencies
+Plug 'kien/ctrlp.vim' | Plug 'tacahiroy/ctrlp-funky' | Plug 'ctrlp-modified.vim'
+" vim-snippets depends on ultisnips
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'marijnh/tern_for_vim', { 'do': 'npm i' }
+Plug 'tpope/vim-surround'
+Plug 'Raimondi/delimitMate'
+Plug 'klen/python-mode', { 'branch': 'develop' }
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'Chiel92/vim-autoformat'
+Plug 'djoshea/vim-autoread'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'  
+" Plug 'vim-airline/vim-airline-themes'
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()            " required
 
 if is_init == 1
   echo "Installing Bundles, please ignore key map error messages"
   echo ""
-  :PluginInstall
+  :PlugInstall
 endif
 "}}
 
@@ -81,7 +58,7 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 " colorscheme desert
 silent! colorscheme solarized  
-set guifont=Liberation_Mono_for_Powerline:h14,Source\ Code\ Pro:h14,Menlo:h14
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Basic settings
@@ -96,7 +73,7 @@ set ruler
 set number
 " Highlight current line
 set cursorline
-set colorcolumn=80
+set colorcolumn=100
 " Highlight search results
 set hlsearch
 " Makes search act like search in modern browsers
@@ -240,8 +217,6 @@ nnoremap <c-f> :Autoformat<CR>
 " Move a line of text 
 nnoremap <c-j> mz:m+<cr>`z
 nnoremap <c-k> mz:m-2<cr>`z
-" Toggle tagbar
-nnoremap tb :TagbarToggle<CR>
 " <tab> | Circular windows navigation
 nnoremap <tab>   <c-w>w
 " Useful mappings for managing tabs
@@ -271,14 +246,6 @@ vnoremap <Leader>y "+y
 vnoremap <Leader>p "+p
 " cut
 vnoremap <leader>x "+d
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Airline settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts=1
-" let g:Powerline_symbols='fancy'
-" let g:airline_theme='wombat'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERDTree settings
@@ -415,3 +382,4 @@ let g:jsx_ext_required = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile,BufRead *[mM]akefile setf make
 autocmd FileType make setlocal noexpandtab
+
