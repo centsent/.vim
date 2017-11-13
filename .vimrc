@@ -16,27 +16,13 @@ call plug#begin('~/.vim/bundle')
 
 " Keep Plugin commands between plug#begin/end.
 Plug 'easymotion/vim-easymotion'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 " nerdtree group dependencies
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'The-NERD-Commenter'
-Plug 'scrooloose/syntastic'
-Plug 'mattn/emmet-vim'
-Plug 'maksimr/vim-jsbeautify'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'scrooloose/nerdcommenter'
+Plug 'vim-syntastic/syntastic'
 Plug 'editorconfig/editorconfig-vim'
 " ctrlp group dependencies
 Plug 'kien/ctrlp.vim' | Plug 'tacahiroy/ctrlp-funky' | Plug 'ctrlp-modified.vim'
-" vim-snippets depends on ultisnips
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm i' }
-Plug 'tpope/vim-surround'
-Plug 'Raimondi/delimitMate'
-Plug 'klen/python-mode', { 'branch': 'develop' }
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'Chiel92/vim-autoformat'
 Plug 'djoshea/vim-autoread'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'  
-" Plug 'vim-airline/vim-airline-themes'
 " All of your Plugins must be added before the following line
 call plug#end()            " required
 
@@ -53,11 +39,6 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
 set background=dark
-" Colorscheme
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-" colorscheme desert
-silent! colorscheme solarized  
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -182,6 +163,7 @@ let g:mapleader = ","
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 map <c-space> ?
+" Disable arrow keys
 map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
@@ -212,8 +194,6 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
-" Formatting code
-nnoremap <c-f> :Autoformat<CR>
 " Move a line of text 
 nnoremap <c-j> mz:m+<cr>`z
 nnoremap <c-k> mz:m-2<cr>`z
@@ -260,11 +240,6 @@ nnoremap <leader>f :NERDTreeToggle<CR>
 let g:nerdtree_tabs_open_on_gui_startup=0
 let g:nerdtree_tabs_open_on_console_startup=0
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => NERD commenter
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ctrlp settings
@@ -285,6 +260,7 @@ let g:ctrlp_custom_ignore = '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$'
 "let g:ctrlp_working_path_mode=0
 let g:ctrlp_extensions = ['funky']
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => EasyMotion settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -302,38 +278,6 @@ omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => YouCompleteMe
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
-let g:ycm_use_ultisnips_completer = 0
-let g:ycm_goto_buffer_command = 'horizontal-split'
-let g:ycm_complete_in_comments = 1 
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_seed_identifiers_with_syntax=1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => ultisnips
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:UltiSnipsExpandTrigger="<c-e>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-go
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>e <Plug>(go-rename)
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Syntastic
@@ -360,22 +304,6 @@ let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_java_checkers=['javac']
 let g:syntastic_java_javac_classpath = './lib/*.jar;./src'
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => tern-for-vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:tern_show_signature_in_pum = 1
-" Rename
-nnoremap <leader>tr :TernRename<cr>
-let g:tern_show_argument_hints='on_hold'
-" and 
-let g:tern_map_keys=1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => jsx
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Allow JSX in normal JS files
-let g:jsx_ext_required = 0 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => makefile
