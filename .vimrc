@@ -12,6 +12,10 @@ endif
 
 set nocompatible
 
+" Fix paste bug triggered by the above inoremaps
+" https://vimhelp.appspot.com/term.txt.html#xterm-bracketed-paste 
+set t_BE=
+
 call plug#begin('~/.vim/bundle')
 
 " Keep Plugin commands between plug#begin/end.
@@ -21,7 +25,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'scrooloose/nerdco
 Plug 'vim-syntastic/syntastic'
 Plug 'editorconfig/editorconfig-vim'
 " ctrlp group dependencies
-Plug 'kien/ctrlp.vim' | Plug 'tacahiroy/ctrlp-funky' | Plug 'ctrlp-modified.vim'
+Plug 'kien/ctrlp.vim' | Plug 'tacahiroy/ctrlp-funky'
 Plug 'djoshea/vim-autoread'
 " All of your Plugins must be added before the following line
 call plug#end()            " required
