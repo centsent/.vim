@@ -1,5 +1,7 @@
 " basic settings
 source ~/.vim/init/basic.vim
+" editing settings
+source ~/.vim/init/edit.vim
 " theme settings
 source ~/.vim/init/theme.vim
 " key map settings
