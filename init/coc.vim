@@ -1,6 +1,7 @@
 let g:coc_global_extensions = [
       \'coc-diagnostic',
       \'coc-dash-complete', 'coc-dot-complete', 'coc-just-complete',
+      \'coc-snippets',
       \'coc-git',
       \'coc-clangd', 'coc-clang-format-style-options', 'coc-cmake',
       \'coc-json', 'coc-yaml', 'coc-toml',
