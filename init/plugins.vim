@@ -28,7 +28,7 @@ Plug 'sheerun/vim-polyglot'
 
 Plug 'honza/vim-snippets'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall'}
 
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
