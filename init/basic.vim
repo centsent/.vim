@@ -104,3 +104,6 @@ set smartcase
 set history=500
 " No preview window
 set completeopt-=preview
+
+" Enter automatically into the files directory
+" autocmd BufEnter * silent! lcd %:p:h

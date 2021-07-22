@@ -12,13 +12,21 @@ call plug#begin('~/.vim/bundle')
 Plug 'djoshea/vim-autoread'
 
 Plug 'vim-syntastic/syntastic'
+
 Plug 'editorconfig/editorconfig-vim'
 
+Plug 'tpope/vim-fugitive'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 Plug 'pechorin/any-jump.vim'
+
 Plug 'sheerun/vim-polyglot'
 
-" post install (yarn install | npm install) then load plugin only for editing supported files
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'honza/vim-snippets'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
