@@ -8,3 +8,5 @@ set background=dark
 set laststatus=2
 
 syntax on
+
+colorscheme molokai
