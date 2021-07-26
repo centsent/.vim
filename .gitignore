@@ -1,3 +1,6 @@
 .ropeproject
 
+autoload
+bundle
+
 .netrwhist
