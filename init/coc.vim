@@ -14,7 +14,7 @@ let g:coc_global_extensions = [
       \'coc-graphql',
       \'coc-pyright',
       \'coc-julia', 
-      \'coc-rls', 'coc-rust-analyzer',
+      \'coc-rust-analyzer',
       \'coc-vimlsp',
       \]
 

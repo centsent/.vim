@@ -11,6 +11,14 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'djoshea/vim-autoread'
 
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'preservim/nerdcommenter'
+
+Plug 'itchyny/lightline.vim'
+
+Plug 'dense-analysis/ale'
+
 Plug 'vim-syntastic/syntastic'
 
 Plug 'editorconfig/editorconfig-vim'
@@ -21,6 +29,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'pechorin/any-jump.vim'
+
+Plug 'AndrewRadev/splitjoin.vim'
 
 Plug 'sheerun/vim-polyglot'
 

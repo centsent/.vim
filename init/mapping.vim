@@ -18,7 +18,7 @@ map <Down> <Nop>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Autoreload .vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd! BufWritePost .vimrc source ~/.vimrc 
+autocmd! BufWritePost *.vim,.vimrc source ~/.vimrc 
 map <silent> <leader>ss :source ~/.vimrc<cr>
 map <silent> <leader>ee :e ~/.vimrc<cr> 
 
@@ -44,22 +44,27 @@ nnoremap gj j
 nnoremap <c-j> mz:m+<cr>`z
 nnoremap <c-k> mz:m-2<cr>`z
 " <tab> | Circular windows navigation
-nnoremap <tab>   <c-w>w
+nnoremap <tab> <c-w>w
 " Useful mappings for managing tabs
 nnoremap <C-t> :tabnew<CR>
 nnoremap <leader>p :tabprevious<CR>
 nnoremap <leader>n :tabnext<CR>
+" Split windows
+" New horizontal split(editing a new empty buffer)
+nnoremap <space>1 <c-w>s
+" :vsplit window vertically(editing current buffer)
+nnoremap <space>2 <c-w>v
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Insert Mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " <C-j> | Escaping!
-inoremap <C-j> <ESC>
+ inoremap <C-j> <ESC>
 " inoremap <esc> <nop>
-" delete line
-" inoremap <C-d> <esc>ddi
 
-" Combining move and scroll
+inoremap <leader>, <esc>:w<cr>
+
+"" Combining move and scroll
 inoremap <silent> <C-d> <C-\><C-O><C-D>
 inoremap <silent> <C-u> <C-\><C-O><C-U>
 

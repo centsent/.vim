@@ -10,6 +10,8 @@ source ~/.vim/init/mapping.vim
 source ~/.vim/init/netrw.vim
 " This script contains plugin specific settings
 source ~/.vim/init/plugins.vim
+" ale settings
+source ~/.vim/init/ale.vim
 " coc settings
 source ~/.vim/init/coc.vim
 " fzf settings
@@ -20,3 +22,5 @@ source ~/.vim/init/syntastic.vim
 source ~/.vim/init/makefile.vim
 " golang settings
 source ~/.vim/init/go.vim
+" rust settings
+source ~/.vim/init/rust.vim
