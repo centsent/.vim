@@ -1,0 +1,17 @@
+{
+  "codeLens.enable": true,
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "c",
+    "javascript",
+    "json",
+    "jsonc",
+    "julia",
+    "markdown",
+    "python",
+    "rust",
+    "typescript",
+    "typescriptreact"
+  ],
+  "python.formatting.provider": "black"
+}

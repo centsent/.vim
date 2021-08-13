@@ -1,7 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => golang
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:go_fmt_command = "goreturns"
+let g:go_fmt_command = "goimports"
 let g:go_rename_command = "gopls"
 let g:go_list_type = "quickfix"
 let g:go_metalinter_command = 'golangci-lint'
@@ -41,7 +41,7 @@ augroup go
   " Quickly jump between a Go source cod and its test file.
   autocmd FileType go nmap ga :GoAlternate<CR>
   " Rename identifiers
-  autocmd FileType go nmap gr :GoRename 
+  autocmd FileType go nmap gr :GoRename<CR>
   " Next quickfix error
   autocmd FileType go nmap ne :cnext<CR>
   " Previous quickfix error

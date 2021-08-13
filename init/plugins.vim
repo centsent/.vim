@@ -17,8 +17,6 @@ Plug 'preservim/nerdcommenter'
 
 Plug 'itchyny/lightline.vim'
 
-Plug 'dense-analysis/ale'
-
 Plug 'vim-syntastic/syntastic'
 
 Plug 'editorconfig/editorconfig-vim'
