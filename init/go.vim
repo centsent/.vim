@@ -3,11 +3,9 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
 let g:go_rename_command = "gopls"
-let g:go_list_type = "quickfix"
 let g:go_metalinter_command = 'golangci-lint'
 
 let g:go_auto_type_info = 1
-let g:go_auto_sameids = 1
 
 let g:go_autodetect_gopath = 1
 
@@ -42,10 +40,6 @@ augroup go
   autocmd FileType go nmap ga :GoAlternate<CR>
   " Rename identifiers
   autocmd FileType go nmap gr :GoRename<CR>
-  " Next quickfix error
-  autocmd FileType go nmap ne :cnext<CR>
-  " Previous quickfix error
-  autocmd FileType go nmap pe :cprevious<CR>
   " :GoBuild and :GoTestCompile
   autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
   " :GoRun

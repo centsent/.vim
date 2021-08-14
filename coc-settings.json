@@ -10,8 +10,56 @@
     "markdown",
     "python",
     "rust",
+    "toml",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "yaml"
   ],
-  "python.formatting.provider": "black"
+  "list.source.files.args": [
+    "--hidden",
+    "--files"
+  ],
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "filetypes": [
+        "go"
+      ],
+      "rootPatterns": [
+        "go.mod"
+      ]
+    },
+    "graphql": {
+      "command": "graphql-lsp",
+      "args": [
+        "server",
+        "-m",
+        "stream"
+      ],
+      "filetypes": [
+        "graphql"
+      ]
+    },
+    "julia": {
+      "command": "julia",
+      "args": [
+        "--startup-file=no",
+        "--history-file=no",
+        "-e",
+        "using LanguageServer;\n       using Pkg;\n       import StaticLint;\n       import SymbolServer;\n       env_path = dirname(Pkg.Types.Context().env.project_file);\n   server = LanguageServer.LanguageServerInstance(stdin, stdout, env_path, \"\");\n       server.runlinter = true;\n       run(server);"
+      ],
+      "filetypes": [
+        "julia"
+      ]
+    },
+    "rust": {
+      "command": "rust-analyzer",
+      "filetypes": [
+        "rust"
+      ],
+      "rootPatterns": [
+        "Cargo.toml"
+      ]
+    }
+  }
 }

@@ -15,24 +15,15 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'preservim/nerdcommenter'
 
-Plug 'itchyny/lightline.vim'
-
-Plug 'vim-syntastic/syntastic'
+Plug 'vim-airline/vim-airline'
 
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'tpope/vim-fugitive'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-Plug 'pechorin/any-jump.vim'
-
-Plug 'AndrewRadev/splitjoin.vim'
-
 Plug 'sheerun/vim-polyglot'
 
-Plug 'honza/vim-snippets'
+Plug 'AndrewRadev/splitjoin.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall'}
 

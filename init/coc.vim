@@ -1,21 +1,12 @@
 let g:coc_global_extensions = [
       \'coc-diagnostic',
-      \'coc-dash-complete', 'coc-dot-complete', 'coc-just-complete',
+      \'coc-lists',
       \'coc-snippets',
       \'coc-git',
-      \'coc-clangd', 'coc-clang-format-style-options', 'coc-cmake',
-      \'coc-json', 'coc-yaml', 'coc-toml',
+      \'coc-json', 'coc-yaml',
+      \'coc-clangd',
       \'coc-tsserver',
-      \'coc-prettier', 'coc-eslint',
-      \'coc-html', 'coc-htmlhint', 'coc-html-css-support', 'coc-emmet',
-      \'coc-css', 'coc-cssmodules',
-      \'coc-deno', 'coc-denoland',
-      \'coc-go', 
-      \'coc-graphql',
       \'coc-pyright',
-      \'coc-julia', 
-      \'coc-rust-analyzer',
-      \'coc-vimlsp',
       \]
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
@@ -48,21 +39,14 @@ augroup coc
   nmap <silent> gd <Plug>(coc-definition)
   nmap <silent> gy <Plug>(coc-type-definition)
   nmap <silent> gi <Plug>(coc-implementation)
-  "nmap <silent> gr <Plug>(coc-references)
+  nmap <silent> gf <Plug>(coc-references)
   " Symbol renaming.
   nmap <silent>gr  <Plug>(coc-rename)
 
   " Mappings for CoCList
-  " Show all diagnostics.
-  nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
   " Find symbol of current document.
   nnoremap <silent><nowait> <c-g>  :<C-u>CocList outline<cr>
+  nnoremap <silent><nowait> <c-p>  :<C-u>CocList files<cr>
   " Search workspace symbols.
   nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-  " Do default action for next item.
-  nnoremap <silent><nowait> <space>j :<C-u>CocNext<CR>
-  " Do default action for previous item.
-  nnoremap <silent><nowait> <space>k :<C-u>CocPrev<CR>
-  " Resume latest coc list.
-  nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 augroup end
