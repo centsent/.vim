@@ -12,7 +12,7 @@ let g:coc_global_extensions = [
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 " Make <tab> used for trigger completion, completion confirm, snippet expand and jump like VSCode.
-inoremap <silent><expr> <TAB>
+inoremap <silent><expr> <Tab>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -49,4 +49,7 @@ augroup coc
   nnoremap <silent><nowait> <c-p>  :<C-u>CocList files<cr>
   " Search workspace symbols.
   nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+
+  " Show documentation of symbol under cursor
+  nnoremap <silent> <space>h :call CocActionAsync('doHover')<cr>
 augroup end

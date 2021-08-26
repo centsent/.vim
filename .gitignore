@@ -4,3 +4,5 @@ autoload
 bundle
 
 .netrwhist
+
+sessions/default.vim

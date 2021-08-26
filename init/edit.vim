@@ -63,3 +63,7 @@ endif
 
 " Enter automatically into the files directory
 autocmd BufEnter * silent! lcd %:p:h
+
+" Highlight json comment
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
