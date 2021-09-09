@@ -3,6 +3,7 @@
   "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "c",
+    "cpp",
     "javascript",
     "json",
     "jsonc",
