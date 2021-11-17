@@ -1,4 +1,11 @@
 {
+  "list.source.files.defaultArgs": [
+    "-workspace"
+  ],
+  "list.source.files.args": [
+    "--hidden",
+    "--files"
+  ],
   "codeLens.enable": true,
   "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": [
@@ -10,15 +17,12 @@
     "julia",
     "markdown",
     "python",
+    "html",
     "rust",
     "toml",
     "typescript",
     "typescriptreact",
     "yaml"
-  ],
-  "list.source.files.args": [
-    "--hidden",
-    "--files"
   ],
   "languageserver": {
     "golang": {
@@ -60,6 +64,17 @@
       ],
       "rootPatterns": [
         "Cargo.toml"
+      ]
+    },
+    "swift": {
+      "filetypes": [
+        "swift"
+      ],
+      "command": "sourcekit-lsp",
+      "rootPatterns": [
+        "Podfile",
+        "Cartfile",
+        "Package.swift"
       ]
     }
   }

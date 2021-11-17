@@ -27,6 +27,10 @@ Plug 'AndrewRadev/splitjoin.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall'}
 
+Plug 'github/copilot.vim'
+
+Plug 'rust-lang/rust.vim'
+
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 Plug 'wakatime/vim-wakatime'
